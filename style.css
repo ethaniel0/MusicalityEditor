@@ -1,0 +1,282 @@
+/* Header */
+main.editor {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	justify-content: space-between;
+}
+main.editor header{
+	width: 100%;
+	user-select: none;
+	padding: 0.5em 1em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+ 	align-items: center;
+	border-bottom: 1px solid silver;
+}
+main.editor header .options {
+	position: absolute;
+	background-color: var(--white);
+	z-index: 10;
+	border: 1px solid var(--faded);
+	box-shadow: 0 0 0.4em lightgrey;
+	border-radius: 4px;
+	transition: background-color 0.2s ease;
+}
+main.editor header .options > div {
+	border-bottom: 1px solid var(--faded);
+	padding: 0.5em;
+}
+main.editor header .options > div:last-child {
+	border-bottom: none;
+}
+main.editor header .options > div:hover{
+	background-color: var(--light);
+}
+main.editor header img{
+    height: 3em;
+    width: auto;
+    margin: 0;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+main.editor header img:hover{
+    transform: translateY(-0.5em);
+}
+main.editor header > div{
+	display: flex;
+	flex-direction: column;
+}
+main.editor header > div > div{
+	margin-top: 0.5em;
+}
+main.editor header h1{
+	margin: 0;
+	font-size: 1.7em;
+}
+main.editor header span{
+	margin-right: 0.5em;
+	padding: 0.2em 0.3em;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: background-color 0.2s ease;
+}
+main.editor header span:hover{
+	background-color: gainsboro;
+}
+.container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: row wrap;
+	height: 100%;
+}
+.container > div{
+	flex: 1 1 auto;
+	max-height: calc(100vh - 79px);
+	height: 100%;
+}
+.gutter.gutter-horizontal {
+    cursor: ew-resize;
+	background-color: gainsboro;
+	border: none;
+	box-shadow: none;
+}
+#left{
+	display: flex;
+	flex-direction: column;
+	padding: 0.5em;
+	align-items: stretch;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#left .card{
+	display: flex;
+	flex-direction: row;
+	flex-shrink: 0;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5em;
+	margin: 0.5em;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 0 0.5em silver;
+	height: auto;
+	overflow: hidden;
+	user-select: none;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+	border: 1px solid black;
+}
+#left .card .i{
+	font-size: 2em;
+	align-self: center;
+}
+#left .card span{
+	background-color: gainsboro;
+	border-radius: 4px;
+	text-align: center;
+	padding: 0.3em 0.4em;
+	white-space: nowrap;
+}
+#left .card h3{
+	overflow: hidden;
+	white-space: nowrap;
+  	text-overflow: ellipsis;
+	margin: 0.5em;
+	align-self: center;
+	border: none;
+	outline: none;
+	user-select: none;
+}
+#left .card h3:focus{
+	outline: none;
+}
+.menu{
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 0;
+	margin: 0;
+	user-select: none;
+	box-shadow: 0 0 0.5em silver;
+}
+.menu span{
+	padding: 0.5em 1em;
+	min-width: 6em;
+	cursor: pointer;
+	background-color: #fff;
+	transition: background-color 0.2s ease;
+}
+.menu span:hover{
+	background-color: gainsboro;
+}
+#file{
+	display: none;
+	position: fixed;
+	right: 0;
+	top: 0;
+	visibility: hidden;
+	opacity: 0;
+	height: 0;
+	width: 0;
+	user-select: none;
+	outline: none;
+	border: none;
+}
+#tools{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: nowrap;
+	padding: 0.5em;
+	z-index: 10;
+	background-color: #fff;
+
+}
+#tools > div{
+	border-radius: 4px;	
+	background-color: #fff;
+	font-size: 2em;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.2s ease;
+	cursor: pointer;
+
+}
+
+#tools #eraser{
+	color: deeppink;
+}
+#tools #pen{
+	color: orange;
+}
+#tools #color{
+	color: dodgerblue
+}
+#drawing-zone{
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+#drawing-zone canvas{
+	border-radius: 4px;
+	overflow-y: hidden;
+	min-width: 100%;
+	overflow-x: scroll;
+
+}
+#right{
+	overflow: hidden;
+}
+.context{
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 0 0.5em silver;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	user-select: none;
+}
+.context > div{
+	background-color: #fff;
+	padding: 0.5em 1em;
+	min-width: 6em;
+	cursor: pointer;
+	margin-bottom: 0.5em;
+	transition: background-color 0.2s ease;
+}
+.context > div:hover{
+	background-color: gainsboro;
+}
+.context > div:last-child{
+	margin: 0;	
+}
+#colorpicker {
+	position: absolute;
+	display: none;
+	text-align: center;
+	overflow-y: scroll;
+	right: 1em;
+	top: 50vw;
+	border: 1px solid black;
+	border-radius: 1em;
+	max-height: 20em;
+	max-width: 40vw;
+	background: var(--white);
+	padding: 1em;
+}
+tracks {
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
+}
+track {
+	width: 45%;
+	height: 4em;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid black;
+	margin: 0;
+	padding: 0.5em;
+	overflow-y: hidden;
+}
+track p, track h3 {
+	margin: 0;
+}

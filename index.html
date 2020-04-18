@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MusicalityEditor</title>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/01515ad087.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0"></script>
+	<script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+	<link href="global.css" rel="stylesheet" type="text/css" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="downsize.js" defer></script>
+
+	<script src="https://unpkg.com/@tonejs/midi"></script>
+  <script src="class.js" defer></script>
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<main class="editor">
+		<header>
+			<img src="/MusicalityLogo.png" alt="Musicality logo"/>
+			<div>
+				<h1>usicality</h1>
+				<div>
+					<span>
+						File
+						<div class='hide options'>
+							<div onclick='uploadFile()'>Upload File</div>
+							<div onclick='newFile()'>New File</div>
+							<div onclick='deleteAll()'>Delete All</div>
+						</div>
+					</span>
+					<span>
+						Generate
+						<div class='hide options'>
+							<div>Config</div>
+							<div>About</div>
+							<div>Play</div>
+						</div>
+					</span>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<div id="left">
+				
+			</div>
+			<div id="right">
+				<div id="tools">
+					<div id="eraser">
+						<i class="fas fa-eraser"></i>
+					</div>
+					<div id="pen">
+						<i class="fas fa-pen"></i>
+					</div>
+					<div id="color">
+						<i class="fas fa-palette"></i>
+					</div>
+				</div>
+				<div id="drawing-zone">
+				</div>
+			</div>
+		</div>
+
+		<div id="colorpicker" class='hide'>
+			<button onclick='newTrack()'>+ New Track</button>
+			<br>
+			<tracks>
+			</tracks>
+		</div>
+		
+		<input id="file" type='file' accept=".muse, .mid" />
+	</main>	
+</body>
+</html>

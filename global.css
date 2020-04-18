@@ -1,0 +1,55 @@
+:root{
+	--dark: #7B1FA2;
+	--light: #E1BEE7;
+	--primary: #9C27B0;
+	--accent: #FF5252;
+	--black: #212121;
+	--faded: #757575;
+	--white: #FFFFFF;
+}
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body{
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+	font-family: 'Quicksand', sans-serif;
+}
+.hide {
+	display: none;
+}
+::selection{
+	background-color: silver;
+	color: var(--white);
+}
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+.fadeIn{
+	opacity: 0;
+	animation: 0.8s fadeIn ease forwards;
+	animation-delay: 0.3s;
+}
